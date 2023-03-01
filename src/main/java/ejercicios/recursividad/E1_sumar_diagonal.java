@@ -7,7 +7,8 @@ public class E1_sumar_diagonal {
         int n = 3;
         int suma = 0;
         int[][] matriz = llenarMatriz(n);
-        suma = sumarDiagonalMatriz(matriz, n, n);
+        suma = sumarDiagonalMatriz(matriz, n-1, 0);
+        System.out.println("La suma de la diagonal es: "+suma);
     }
 
     private static int sumarDiagonalMatriz(int[][] matriz, int i, int j) {
@@ -16,7 +17,7 @@ public class E1_sumar_diagonal {
                 if(i == j) {
                     return sumarDiagonalMatriz(matriz, i-1, 0) + matriz[i][j];
                 } else {
-                    //sumarDiagonalMatriz()
+                    return sumarDiagonalMatriz(matriz, i, j+1);
                 }
             }
         }
