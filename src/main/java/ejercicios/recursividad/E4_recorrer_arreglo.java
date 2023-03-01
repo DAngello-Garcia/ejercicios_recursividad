@@ -2,7 +2,7 @@ package ejercicios.recursividad;
 
 import javax.swing.*;
 
-public class E3_sumar_matriz {
+public class E4_recorrer_arreglo {
     public static void main(String[] args) {
         int n = 2;
         int suma = 0;
@@ -14,7 +14,7 @@ public class E3_sumar_matriz {
     private static int sumarDiagonalMatriz(int[][] matriz, int i, int j) {
         if(i >= 0) {
             if(j >= 0) {
-               return sumarDiagonalMatriz(matriz, i, j-1) + matriz[i][j];
+                return sumarDiagonalMatriz(matriz, i, j-1) + matriz[i][j];
             }
             return sumarDiagonalMatriz(matriz, i-1, matriz.length-1);
         }
