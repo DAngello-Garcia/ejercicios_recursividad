@@ -2,22 +2,19 @@ package ejercicios.recursividad;
 
 import javax.swing.*;
 
-public class E1_sumar_diagonal {
+public class E3_sumar_matriz {
     public static void main(String[] args) {
         int n = 3;
         int suma = 0;
         int[][] matriz = llenarMatriz(n);
-        suma = sumarDiagonalMatriz(matriz, n, n);
+        suma = sumarDiagonalMatriz(matriz, n-1, n-1);
+        System.out.println("Suma: "+suma);
     }
 
     private static int sumarDiagonalMatriz(int[][] matriz, int i, int j) {
         if(i >= 0) {
-            if(j < matriz.length) {
-                if(i == j) {
-                    return sumarDiagonalMatriz(matriz, i-1, 0) + matriz[i][j];
-                } else {
-                    //sumarDiagonalMatriz()
-                }
+            if(j >= 0) {
+               return sumarDiagonalMatriz(matriz, i-1, j-1) + matriz[i][j];
             }
         }
         return 0;
