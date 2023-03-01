@@ -2,7 +2,10 @@ package ejercicios.recursividad;
 
 import javax.swing.*;
 
-public class E4_recorrer_arreglo {
+public class E5_retornar_num_fila {
+    /*
+    Retornar el número de la fila de la matriz cuya suma de todos sus elementos sea mayor.
+     */
     public static void main(String[] args) {
         int n = 5;
         int contador = 0;
