@@ -6,7 +6,7 @@ public class E6_hallar_palabra_vocales_seguidas {
 
 
         public static void main(String[] args) {
-            String[][] matriz = { { "casa", "perro", "auto", "mesa" }, { "letra", "libro", "avión", "flor" },
+            String[][] matriz = { { "casa", "perro", "auto", "mesa" }, { "letra", "libro", "avion", "flor" },
                     { "taza", "agua", "computadoraaa", "papel" }, { "árbol", "oso", "gato", "sol" } };
 
             ArrayList<String> palabras = new ArrayList<>();
