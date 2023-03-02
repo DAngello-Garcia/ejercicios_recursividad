@@ -7,26 +7,38 @@ public class E5_retornar_num_fila {
     Retornar el número de la fila de la matriz cuya suma de todos sus elementos sea mayor.
      */
     public static void main(String[] args) {
-        int n = 2;
+        int n = 3;
         int m = 3;
-        int index = 0;
+        int index;
+        int suma = 0;
         int[][] matriz = llenarMatriz(n, m);
-        index = retornarFilaMayor(matriz, n, m, index);
-        System.out.println("El número de veces que está "+elem+" es: "+contador);
+        index = retornarFilaMayor(matriz, 0, 0, 0, 0, suma);
+        System.out.println("La fila con la mayor suma es: "+index);
     }
 
-    private static int retornarFilaMayor(int[][] matriz, int i, int j, int index) {
-        if(i==0) {
-            if(j<matriz[0].length) {
-                return retornarFilaMayor(matriz, i, j+1, index) + matriz[i][j];
-            } else {
-                return retornarFilaMayor(matriz, i+1, 0, index);
+    private static int retornarFilaMayor(int[][] matriz, int i, int j, int mayor, int index, int suma) {
+        if(i < matriz.length) {
+            if(j < matriz[i].length) {
+                suma += matriz[i][j];
+                if(j == matriz[i].length-1) {
+                    if(suma > mayor) {
+                        mayor = suma;
+                        index = i;
+                    }
+                    i++;
+                    j = 0;
+                    suma = 0;
+                } else {
+                    if(suma > mayor) {
+                        mayor = suma;
+                        index = i;
+                    }
+                    j++;
+                }
+                return retornarFilaMayor(matriz, i, j, mayor, index, suma);
             }
         }
-        if(i < matriz.length) {
-            if(retornarFilaMayor(matriz, i, j, index) > retornarFilaMayor(matriz, 0, j, index))
-                return index;
-        }
+        return index;
     }
 
     private static int[][] llenarMatriz(int n, int m) {
