@@ -1,4 +1,7 @@
 # ejercicios_recursividad
+Yordan Felipe Arenas Barreiro
+
+D'Angello Andrés García Núñez
 
 1. Sumar la diagonal de una matriz de forma recursiva. Retrocediendo en filas y avanzando en columnas.
 
